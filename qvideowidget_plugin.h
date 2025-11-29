@@ -29,6 +29,9 @@ public:
   bool
   isContainer () const override;
 
+  QString
+  domXml () const override;
+
   QWidget *
   createWidget (QWidget *parent) override;
 

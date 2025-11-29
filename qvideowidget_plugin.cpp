@@ -35,6 +35,23 @@ QVideoWidgetPlugin::isContainer () const
   return false;
 }
 
+QString
+QVideoWidgetPlugin::domXml () const
+{
+  return QStringLiteral(
+    "<widget class=\"QVideoWidget\" name=\"videoWidget\">\n"
+    "  <property name=\"geometry\">\n"
+    "    <rect>\n"
+    "      <x>0</x>\n"
+    "      <y>0</y>\n"
+    "      <width>300</width>\n"
+    "      <height>200</height>\n"
+    "    </rect>\n"
+    "  </property>\n"
+    "</widget>"
+  );
+}
+
 QWidget *
 QVideoWidgetPlugin::createWidget (QWidget *parent)
 {
