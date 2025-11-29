@@ -1,4 +1,4 @@
-#include <qvideowidget.h>
+#include "fake_qvideowidget.h"
 
 #include "qvideowidget_plugin.h"
 

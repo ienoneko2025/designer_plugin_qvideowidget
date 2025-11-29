@@ -5,18 +5,20 @@ project(DesignerPluginForQVideoWidget LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 REQUIRED COMPONENTS MultimediaWidgets UiPlugin)
+find_package(Qt6 REQUIRED COMPONENTS Widgets UiPlugin)
 
 qt_wrap_cpp(QT_MOC_SRCS
+  fake_qvideowidget.h
   qvideowidget_plugin.h
 
   TARGET qvideowidget)
 
 add_library(qvideowidget SHARED
   ${QT_MOC_SRCS}
+  fake_qvideowidget.cpp
   qvideowidget_plugin.cpp)
 target_link_libraries(qvideowidget PRIVATE
-  Qt6::MultimediaWidgets
+  Qt6::Widgets
   Qt6::UiPlugin)
 
 install(TARGETS qvideowidget
